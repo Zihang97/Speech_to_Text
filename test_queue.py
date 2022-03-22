@@ -7,14 +7,24 @@ def test_stub_func_without_input():
 		stub_func()
 
 def test_stub_func_with_input2():
+	start = time.time()
 	q = multiprocessing.Queue()
 	q.put(2)
-	assert stub_func(q) == 2
-	
+	process = multiprocessing.Process(target=stub_func, args=(q, ), daemon=True)
+	process.start()
+	process.join()
+	end = time.time()
+	assert end - start >= 2
+
 def test_stub_func_with_input3():
+	start = time.time()
 	q = multiprocessing.Queue()
-	q.put(10)
-	assert stub_func(q) == 10
+	q.put(5)
+	process = multiprocessing.Process(target=stub_func, args=(q, ), daemon=True)
+	process.start()
+	process.join()
+	end = time.time()
+	assert end - start >= 5
 
 def test_speech_func():
 	with pytest.raises(TypeError):
