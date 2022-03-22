@@ -15,6 +15,6 @@ After each process finishes its work, it will terminate and show how long it tak
 <img src="picture/stub2.PNG" height=400>
 
 ## Phase2: Speech to Text
-`Phase2` mainly integrates a speech-to-text module to `Phase1` queue system. I choose to use [DeepSpeech](https://deepspeech.readthedocs.io/en/r0.9/) for speech-to-text processing, then replace the stub function by speech-to-text function. For testing I use three sample audio files DeepSpeech provides and put them into the queue. The translation results are shown below:
+`Phase2` mainly integrates a speech-to-text module to `Phase1` queue system and adds unit tests. I choose to use [DeepSpeech](https://deepspeech.readthedocs.io/en/r0.9/) for speech-to-text processing, then replace the stub function by speech-to-text function. For testing I use three sample audio files DeepSpeech provides and put them into the queue. The translation results are shown below:
 
 <img src="picture/speech.PNG" height=300>
