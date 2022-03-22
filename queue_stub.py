@@ -29,8 +29,11 @@ if __name__ == '__main__':
 		print(f'{process.name} is alive: {process.is_alive()}')
 		print('--------------------------')
 
+	start = time.time()
 	for process in processes:
 		process.join()
+	end = time.time()
+	print('The total time spent is', f'{end-start}s')
 	
 
 
