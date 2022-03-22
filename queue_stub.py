@@ -6,6 +6,7 @@ def stub_func(req_queue):
 		wait_time = req_queue.get()
 		time.sleep(wait_time)
 		print(f'{multiprocessing.current_process().name} complete in {wait_time}s')
+		return wait_time
 
 if __name__ == '__main__':
 	num_process = multiprocessing.cpu_count()
@@ -30,12 +31,12 @@ if __name__ == '__main__':
 		print('--------------------------')
 
 	start = time.time()
+
 	for process in processes:
 		process.join()
+	
 	end = time.time()
 	print('The total time spent is', f'{end-start}s')
-	
-
 
 
 
