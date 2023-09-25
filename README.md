@@ -1,4 +1,4 @@
-# EC530_Speech_to_Text
+# Speech_to_Text
 This project is a speech-to-text module that can handle requests from multiple users simultaneously to transfer speech (audio file) to text. It builds a queue system combined with multiprocessing to manage multiple requests.
 
 ## Phase1: Build Queue System
